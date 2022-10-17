@@ -9,9 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy env
-        run: cp .env.dist .env
-    
       - name: docker Build and push
         uses: docker/build-push-action@v2
         timeout-minutes: 10
@@ -19,3 +16,6 @@ jobs:
           context: .
           file: deploy/docker/Dockerfile.run
           push: true
+        
+      - name: Copy env
+        run: cp .env.dist .env
