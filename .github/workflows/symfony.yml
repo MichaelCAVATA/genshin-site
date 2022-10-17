@@ -16,5 +16,3 @@ jobs:
           context: .
           file: deploy/docker/Dockerfile.run
         
-      - name: Copy env
-        run: cp .env.dist .env
