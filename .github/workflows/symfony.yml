@@ -1,0 +1,17 @@
+name: Symfony
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    environment:
+      name: dev
+    steps:
+      - uses: actions/checkout@v2
+    
+      - name: Copy env
+        run: cp .env.dist .env
